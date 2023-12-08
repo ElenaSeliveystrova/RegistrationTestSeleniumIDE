@@ -1,0 +1,659 @@
+{
+  "id": "3143ea95-bf84-4733-905e-b6569e9e276a",
+  "version": "2.0",
+  "name": "addCommentsTest",
+  "url": "https://www.greencity.social/#/greenCity",
+  "tests": [{
+    "id": "1dc38777-0598-41b4-aa6f-7b77edd82bee",
+    "name": "noRegisteredUser",
+    "commands": [{
+      "id": "e9c06d4a-0988-499c-9b6d-3c858e910951",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.greencity.social/#/greenCity",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5000bf85-a9cd-4414-830e-001d5c9fe994",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1440x900",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b3ffb6f4-5bf5-4a63-b42f-83a374185c30",
+      "comment": "click on the \"Eco News\"",
+      "command": "click",
+      "target": "css=.nav-left-list:nth-child(1) > .url-name",
+      "targets": [
+        ["css=.nav-left-list:nth-child(1) > .url-name", "css:finder"],
+        ["xpath=//a[contains(text(),'Eco news')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '#/news')]", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "96a287fe-dd08-433f-8c46-7e9c41a1f821",
+      "comment": "turn on filter by News",
+      "command": "click",
+      "target": "css=.tag-button:nth-child(1) .text",
+      "targets": [
+        ["css=.tag-button:nth-child(1) .text", "css:finder"],
+        ["xpath=//main[@id='main-content']/div/div[2]/div/app-tag-filter/div/div/button/a/span", "xpath:idRelative"],
+        ["xpath=//a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'News')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "91b86bd1-65d4-4e16-8e7f-fe4c6a1ceab2",
+      "comment": "click on the news \"Пластик у ванілін\"",
+      "command": "click",
+      "target": "xpath=//*[@id=\"main-content\"]//ul[@aria-label=\"news list\"]//h3[text()=\" Пластик у ванілін \"]",
+      "targets": [
+        ["css=.gallery-view-li-active:nth-child(1) .list-image-content", "css:finder"],
+        ["xpath=//img[@alt='user added image']", "xpath:img"],
+        ["xpath=//main[@id='main-content']/div/div[4]/ul/li/app-news-list-gallery-view/div/img", "xpath:idRelative"],
+        ["xpath=//div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "50d46d0e-9f2b-48b4-b699-841a02afd5db",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4f5f374b-0055-4778-a480-4c95b754ec45",
+      "comment": "",
+      "command": "click",
+      "target": "css=.counter > .wrapper",
+      "targets": [
+        ["css=.counter > .wrapper", "css:finder"],
+        ["xpath=//main[@id='main-content']/div/app-comments-container/div/div", "xpath:idRelative"],
+        ["xpath=//app-comments-container/div/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "483e085f-d6d8-4cc8-83db-734159da4c28",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "xpath=//*/app-comments-container",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c22b56c4-3449-4a9e-93b8-44f0735aea3d",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "b497e28f-9a7c-4c84-a7b3-6f1007e89536",
+      "comment": "",
+      "command": "verifyElementNotPresent",
+      "target": "css=.comment-width",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "c413afea-468f-4d22-adcb-30a25f5908b8",
+    "name": "registeredUserPositive",
+    "commands": [{
+      "id": "d6d9f095-9270-4cb1-8e4a-492d11c1b260",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.greencity.social/#/greenCity",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0570a22b-1f57-427a-a1da-8e2451fd580a",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1440x900",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "5ff6f375-4f9d-4628-a4e0-1baefaaf5c47",
+      "comment": "",
+      "command": "click",
+      "target": "css=.header_sign-in-link",
+      "targets": [
+        ["css=.header_sign-in-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Sign in')]", "xpath:link"],
+        ["xpath=//ul/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b8b09880-5e7b-4319-b30a-979a62cae767",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//mat-dialog-container[@id='mat-dialog-2']/app-auth-modal/div/div/div[2]/div/app-sign-in/form/input", "xpath:idRelative"],
+        ["xpath=//input", "xpath:position"]
+      ],
+      "value": "testerforapp2023@gmail.com"
+    }, {
+      "id": "e3b1647f-e601-472d-be5e-b6c52d62206f",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=form-control password-signin", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//mat-dialog-container[@id='mat-dialog-2']/app-auth-modal/div/div/div[2]/div/app-sign-in/form/div/input", "xpath:idRelative"],
+        ["xpath=//div/input", "xpath:position"]
+      ],
+      "value": "nehmys-hipbic-5jadcU"
+    }, {
+      "id": "f18e09b8-2aa5-4219-b5f4-f21f52383337",
+      "comment": "",
+      "command": "click",
+      "target": "css=.greenStyle",
+      "targets": [
+        ["css=.greenStyle", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//mat-dialog-container[@id='mat-dialog-2']/app-auth-modal/div/div/div[2]/div/app-sign-in/form/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sign in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "b38edf16-67a1-460b-b4a8-d3826bcca609",
+      "comment": "wait  \"Eco News\"",
+      "command": "waitForElementPresent",
+      "target": "css=.nav-left-list:nth-child(1) > .url-name",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "6edd3078-c09f-489b-9f27-9dea56d2dac9",
+      "comment": "",
+      "command": "click",
+      "target": "css=.nav-left-list:nth-child(1) > .url-name",
+      "targets": [
+        ["css=.nav-left-list:nth-child(1) > .url-name", "css:finder"],
+        ["xpath=//a[contains(text(),'Eco news')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '#/news')]", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "e2be6fca-e3cd-481c-af85-1862f4f02cc0",
+      "comment": "turn on filter by News",
+      "command": "click",
+      "target": "css=.tag-button:nth-child(1) .text",
+      "targets": [
+        ["css=.tag-button:nth-child(1) .text", "css:finder"],
+        ["xpath=//main[@id='main-content']/div/div[2]/div/app-tag-filter/div/div/button/a/span", "xpath:idRelative"],
+        ["xpath=//a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'News')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "1db87594-f8d4-4dc9-9638-76ec4998e132",
+      "comment": "click on the news \"Пластик у ванілін\"",
+      "command": "click",
+      "target": "xpath=//*[@id=\"main-content\"]//ul[@aria-label=\"news list\"]//h3[text()=\" Пластик у ванілін \"]",
+      "targets": [
+        ["css=.gallery-view-li-active:nth-child(1) .list-image-content", "css:finder"],
+        ["xpath=//img[@alt='user added image']", "xpath:img"],
+        ["xpath=//main[@id='main-content']/div/div[4]/ul/li/app-news-list-gallery-view/div/img", "xpath:idRelative"],
+        ["xpath=//div/img", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "7a71eafc-f706-4a50-868f-7dab7a00183d",
+      "comment": "wait Commands",
+      "command": "waitForElementPresent",
+      "target": "xpath=//*[@id=\"main-content\"]/div/app-comments-container//p[text()=\"Comments\"]",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "a8ee10f5-ec75-4da8-ab34-465387100b21",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "xpath=//*[@id=\"main-content\"]/div/app-comments-container//p[text()=\"Comments\"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c11d4156-2799-4c7e-b3a9-94eced9a02b2",
+      "comment": "",
+      "command": "storeText",
+      "target": "xpath=//*/app-comments-container//p[@class=\"total-count\"]",
+      "targets": [],
+      "value": "countText"
+    }, {
+      "id": "9f1cd772-3a3b-4318-ae79-0e63845b1f95",
+      "comment": "",
+      "command": "echo",
+      "target": "${countText}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "57c57daf-da74-4814-b32e-c32e754e3385",
+      "comment": "",
+      "command": "executeScript",
+      "target": "x=${countText}; return x.length-9;",
+      "targets": [],
+      "value": "length"
+    }, {
+      "id": "4a5d87e9-e05b-4632-91e3-4cdacedaf19e",
+      "comment": "",
+      "command": "echo",
+      "target": "${length}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d0a8113e-52ae-4cdb-980e-8ec3922c2e81",
+      "comment": "",
+      "command": "executeScript",
+      "target": "cT=${countText}; return cT.split(\" comments\");",
+      "targets": [],
+      "value": "beforeCount"
+    }, {
+      "id": "6a16ab69-520e-4cd2-84c4-35797d09a68e",
+      "comment": "",
+      "command": "echo",
+      "target": "${beforeCount}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6c502492-7375-4892-a179-c2b264ad1c5b",
+      "comment": "",
+      "command": "type",
+      "target": "css=.comment-width",
+      "targets": [],
+      "value": "What a good idea!Test"
+    }, {
+      "id": "d809e4b1-a4e4-4165-872b-f8090f603d8b",
+      "comment": "click on the button \"Comment\"",
+      "command": "click",
+      "target": "css=.primary-global-button",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bad77db0-62a7-4c3c-ba59-5e94dfece2d5",
+      "comment": "",
+      "command": "executeScript",
+      "target": "expectedCount =parseInt(${beforeCount}) + 1; return expectedCount + \" comments\";",
+      "targets": [],
+      "value": "expectedTotalCount"
+    }, {
+      "id": "bd697cb9-557e-48d1-b969-e0b204a9c4a0",
+      "comment": "",
+      "command": "echo",
+      "target": "${expectedTotalCount}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "04823ac1-be3e-4536-b116-b0208233b537",
+      "comment": "",
+      "command": "pause",
+      "target": "3000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "d167bf1d-f249-489a-aa28-893ef0f4685f",
+      "comment": "",
+      "command": "verifyText",
+      "target": "//*/app-comments-container//p[@class=\"total-count\"]",
+      "targets": [],
+      "value": "${expectedTotalCount}"
+    }, {
+      "id": "2381ff61-da38-4daf-a039-a23a3c078d3f",
+      "comment": "",
+      "command": "executeScript",
+      "target": "today = new Date(); var mm =today.toLocaleString('en-us',{month:'short'});  var dd = today.getDate(); var yyyy = today.getFullYear(); return today = mm+\" \"+dd+\", \"+yyyy;",
+      "targets": [],
+      "value": "currentDate"
+    }, {
+      "id": "746a3d1e-0abb-4075-aca8-d5dd2976f1d9",
+      "comment": "",
+      "command": "echo",
+      "target": "${currentDate}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "69397fdf-fd85-4980-887b-c7628f21de7a",
+      "comment": "",
+      "command": "storeText",
+      "target": "xpath=//*[@id=\"main-content\"]/div/app-comments-container/app-comments-list/div[1]//span[@class=\"comment-date-month\"][text()]",
+      "targets": [],
+      "value": "messageDate"
+    }, {
+      "id": "050a3bdc-7ea9-430a-a17b-f157cd3decd0",
+      "comment": "",
+      "command": "echo",
+      "target": "${messageDate}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2a0cd8d2-e35c-4a0f-8f58-a45817adbaca",
+      "comment": "",
+      "command": "verifyText",
+      "target": "xpath=//*[@id=\"main-content\"]/div/app-comments-container/app-comments-list/div[1]//span[@class=\"comment-date-month\"][text()]",
+      "targets": [],
+      "value": "${currentDate}"
+    }, {
+      "id": "c6b51942-f34f-4c92-85de-7bb9799659f8",
+      "comment": "",
+      "command": "storeText",
+      "target": "css=.body-2",
+      "targets": [
+        ["css=.body-2", "css:finder"],
+        ["xpath=//ul[@id='header_user-wrp']/li", "xpath:idRelative"],
+        ["xpath=//ul[2]/li", "xpath:position"]
+      ],
+      "value": "userName"
+    }, {
+      "id": "f8a8f622-d3c0-404d-a9b6-451378a906f9",
+      "comment": "",
+      "command": "verifyText",
+      "target": "xpath=//*[@id=\"main-content\"]/div/app-comments-container/app-comments-list/div[1]/div[2]/span[text()]",
+      "targets": [],
+      "value": "${userName}"
+    }, {
+      "id": "144e5ab7-1544-4376-8001-f0538becbeb1",
+      "comment": "",
+      "command": "click",
+      "target": "css=.body-2",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "03693e57-2da9-4306-8152-edb7cae07d94",
+      "comment": "",
+      "command": "click",
+      "target": "css=.drop-down-item:nth-child(2) > a",
+      "targets": [],
+      "value": ""
+    }]
+  }, {
+    "id": "81815959-ceff-4fcc-a37e-3ef2f34585d9",
+    "name": "registredUserNegative",
+    "commands": [{
+      "id": "0d939449-30e3-4a32-a90b-0968e2313789",
+      "comment": "",
+      "command": "open",
+      "target": "https://www.greencity.social/#/greenCity",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "cde9c7d3-f86e-42bb-9f90-cf447cf102b5",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1440x900",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4b78de6d-647b-4647-ba75-313ecf1e8d05",
+      "comment": "",
+      "command": "click",
+      "target": "css=.header_sign-in-link",
+      "targets": [
+        ["css=.header_sign-in-link", "css:finder"],
+        ["xpath=//a[contains(text(),'Sign in')]", "xpath:link"],
+        ["xpath=//ul/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "4a9ddc38-fe98-475d-bd3c-469f682bb40d",
+      "comment": "",
+      "command": "type",
+      "target": "id=email",
+      "targets": [
+        ["id=email", "id"],
+        ["name=email", "name"],
+        ["css=#email", "css:finder"],
+        ["xpath=//input[@id='email']", "xpath:attributes"],
+        ["xpath=//mat-dialog-container[@id='mat-dialog-0']/app-auth-modal/div/div/div[2]/div/app-sign-in/form/input", "xpath:idRelative"],
+        ["xpath=//form/input", "xpath:position"]
+      ],
+      "value": "testerforapp2023@gmail.com"
+    }, {
+      "id": "037fd418-495f-4e81-a6ed-3b357e18ad2a",
+      "comment": "",
+      "command": "type",
+      "target": "id=password",
+      "targets": [
+        ["id=password", "id"],
+        ["name=form-control password-signin", "name"],
+        ["css=#password", "css:finder"],
+        ["xpath=//input[@id='password']", "xpath:attributes"],
+        ["xpath=//mat-dialog-container[@id='mat-dialog-0']/app-auth-modal/div/div/div[2]/div/app-sign-in/form/div/input", "xpath:idRelative"],
+        ["xpath=//form/div/input", "xpath:position"]
+      ],
+      "value": "nehmys-hipbic-5jadcU"
+    }, {
+      "id": "ac2f7d0e-f12f-47d4-866a-57932e17c84d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.greenStyle",
+      "targets": [
+        ["css=.greenStyle", "css:finder"],
+        ["xpath=//button[@type='submit']", "xpath:attributes"],
+        ["xpath=//mat-dialog-container[@id='mat-dialog-0']/app-auth-modal/div/div/div[2]/div/app-sign-in/form/button", "xpath:idRelative"],
+        ["xpath=//form/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Sign in')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "122a1c60-84fb-400c-94f4-84896edfee0d",
+      "comment": "",
+      "command": "waitForElementVisible",
+      "target": "xpath=//header//a[contains(text(), \"Eco news\")]",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "3a8796f0-6bfe-4cd1-aacc-f61163530102",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//header//a[contains(text(), \"Eco news\")]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "7a700a31-486a-472a-9b09-c288914ed044",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,0)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "396a564f-5512-42ec-8cdf-aa9bbc72881d",
+      "comment": "",
+      "command": "pause",
+      "target": "3000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "76aa8825-68fd-47d9-abb0-b831bbcbe060",
+      "comment": "turn on filter by News",
+      "command": "click",
+      "target": "css=.tag-button:nth-child(1) .text",
+      "targets": [
+        ["css=.tag-button:nth-child(1) .text", "css:finder"],
+        ["xpath=//main[@id='main-content']/div/div[2]/div/app-tag-filter/div/div/button/a/span", "xpath:idRelative"],
+        ["xpath=//a/span", "xpath:position"],
+        ["xpath=//span[contains(.,'News')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3e942474-123f-4ef9-9676-970608382e4c",
+      "comment": "",
+      "command": "click",
+      "target": "xpath=//*[@id=\"main-content\"]//ul[@aria-label=\"news list\"]//h3[text()=\" Пластик у ванілін \"]",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "08227516-9d49-4698-8ae1-70673c6fa05d",
+      "comment": "",
+      "command": "runScript",
+      "target": "window.scrollTo(0,14)",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "896b1f53-5afc-4db2-9c6a-0c4805f3ed4b",
+      "comment": "",
+      "command": "pause",
+      "target": "3000",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "50c52443-9c12-40b1-a221-961d6b37ad33",
+      "comment": "",
+      "command": "verifyElementPresent",
+      "target": "css=.primary-global-button",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a6f5628c-d113-4f09-a63c-4155200eeea5",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return document.querySelector('.primary-global-button').disabled;",
+      "targets": [],
+      "value": "startStatusButton"
+    }, {
+      "id": "e6d39709-808c-4cfc-967b-ce5b69417855",
+      "comment": "",
+      "command": "echo",
+      "target": "${startStatusButton}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8a639b2e-f2e1-4487-a1c9-f996eee6b011",
+      "comment": "",
+      "command": "type",
+      "target": "css=.comment-width",
+      "targets": [],
+      "value": "n"
+    }, {
+      "id": "a00f2695-ffd9-405b-8b4d-2a080fb116dd",
+      "comment": "",
+      "command": "storeValue",
+      "target": "css=.comment-width",
+      "targets": [],
+      "value": "commentText"
+    }, {
+      "id": "70464bae-7568-4995-a344-3f34f593ba81",
+      "comment": "",
+      "command": "echo",
+      "target": "${commentText}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "63396af7-9036-44f6-9bbe-3474f5d590df",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return document.querySelector('.primary-global-button').disabled;",
+      "targets": [],
+      "value": "buttonDisable"
+    }, {
+      "id": "defdfce6-5db2-43d6-affe-d37084b47050",
+      "comment": "",
+      "command": "echo",
+      "target": "${buttonDisable}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "8885536f-dfcc-4d2f-bfbd-c6ce2be53ff0",
+      "comment": "",
+      "command": "while",
+      "target": "${buttonDisable} != true",
+      "targets": [],
+      "value": "buttonDisable"
+    }, {
+      "id": "65776d10-18a7-4adf-b2f2-b62caf404d09",
+      "comment": "",
+      "command": "store",
+      "target": "Чи могли б ви подумати, що з пластикових відходів можна виробляти не лише речі, але й органічні продукти? Науковці з Единбурзького університету вирішили перевірити цю теорію та зрештою придумали, як за допомогою кишкової палички перетворити пластик у ванілін. Йдеться про хімічну сполуку, яка є основним ароматичним компонентом ванілі.   Щоб продемонструвати, як працює їхня технологія, вони взяли пластикові відходи, які зазнали змін внаслідок впливу навколишнього середовища: світла, вологи або тепла і додали до них модифіковані бактерії. За кімнатної температури кишкова паличка перетворила пластик на ванілін, який, як кажуть вчені, навіть придатний для споживання.  Його використовують у харчових продуктах та у косметиці. За прогнозами вчених, до 2025 року попит на ванілін зросте до 59 тисяч тонн. Безпечність цього продукту вчені хочуть перевірити у наступних своїх дослідженнях.",
+      "targets": [],
+      "value": "addedText"
+    }, {
+      "id": "26f04a28-6cbe-4324-95bb-24329d06d3f7",
+      "comment": "",
+      "command": "executeScript",
+      "target": "newText=${commentText} + ${addedText}; return newText;",
+      "targets": [],
+      "value": "commentText"
+    }, {
+      "id": "67ea9edc-cc91-4170-aaac-dbb4ec8bd219",
+      "comment": "",
+      "command": "type",
+      "target": "css=.comment-width",
+      "targets": [],
+      "value": "${commentText}"
+    }, {
+      "id": "738803a5-acd7-4198-9bf7-0aa22e573918",
+      "comment": "",
+      "command": "echo",
+      "target": "${commentText}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "88017f2f-cf1d-4b2b-9dab-abc85a2f26b6",
+      "comment": "",
+      "command": "executeScript",
+      "target": "return ${commentText}.split(' ').length;",
+      "targets": [],
+      "value": "messageLength"
+    }, {
+      "id": "8bab3308-34da-4aa6-afff-d0a6398cba0d",
+      "comment": "",
+      "command": "echo",
+      "target": "${messageLength}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "fb34431c-31ef-4686-81f8-831efd491961",
+      "comment": "",
+      "command": "executeScript",
+      "target": "newState = document.querySelector('.primary-global-button').disabled; return ${buttonDisable}=newState;",
+      "targets": [],
+      "value": "buttonDisable"
+    }, {
+      "id": "3381f528-275a-4e55-aa49-5ff8d139f639",
+      "comment": "",
+      "command": "echo",
+      "target": "${buttonDisable}",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "63d75f91-f0b9-4fde-95b6-56675d0941b7",
+      "comment": "",
+      "command": "end",
+      "target": "",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "1053ffe8-5582-4d79-ad57-e6f884f5e8d3",
+      "comment": "click UserName",
+      "command": "click",
+      "target": "css=.body-2",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "2eb27ca4-3374-469d-9540-8bf82e504ec4",
+      "comment": "Log out",
+      "command": "click",
+      "target": "css=.drop-down-item:nth-child(2) > a",
+      "targets": [],
+      "value": ""
+    }]
+  }],
+  "suites": [{
+    "id": "ff3e09a2-2682-4278-9610-9361ef88256b",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": ["1dc38777-0598-41b4-aa6f-7b77edd82bee"]
+  }],
+  "urls": ["https://www.greencity.social/", "https://www.greencity.social/#/greenCity"],
+  "plugins": []
+}
